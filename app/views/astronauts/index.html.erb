@@ -1,5 +1,9 @@
 <h2>Astronaut Auditorium</h2>
 
+<section class="statistics">
+  <p>Average Age: <%= @average_age %></p>
+</section>
+
 <section class="astronauts">
 <% @astronauts.each do |astronaut| %>
   <div class="astronaut" id="astronaut-<%= astronaut.id %>">
