@@ -34,7 +34,7 @@ RSpec.describe 'As a user', type: :feature do
 
       expected = (@neil.age + @alex.age + @logan.age) / 3
 
-      expect(page).to have_content("Average Age: #{expected}")
+      expect(page).to have_content("Average Age: #{expected.round(2)}")
     end
   end
 end
