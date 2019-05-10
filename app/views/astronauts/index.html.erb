@@ -10,6 +10,11 @@
     <p>Name: <%= astronaut.name %></p>
     <p>Age: <%= astronaut.age %></p>
     <p>Job: <%= astronaut.job %></p>
+    <div id="astronaut-<%= astronaut.id %>-missions">
+      <% astronaut.missions.each do |mission| %>
+      <p><%= mission.title %></p>
+      <% end %>
+    </div>
   </div>
 <% end %>
 </section>
