@@ -32,7 +32,7 @@ RSpec.describe 'As a user', type: :feature do
     it 'I see the average age of listed Astronauts' do
       visit astronauts_path
 
-      expected = (@neil.age + @alex.age + @logan.age) / 3
+      expected = (@neil.age + @alex.age + @logan.age) / 3.0
 
       expect(page).to have_content("Average Age: #{expected.round(2)}")
     end
