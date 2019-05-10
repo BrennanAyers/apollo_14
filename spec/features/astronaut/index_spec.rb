@@ -8,7 +8,7 @@ RSpec.describe 'As a user', type: :feature do
       @alex = Astronaut.create!(name: "Alex Armstrong", age: 25, job: "Chef")
     end
     it 'I see a list of astronauts with their info' do
-      visit '/astronauts'
+      visit astronauts_path
 
       within("#astronaut-#{@neil.id}") do
         expect(page).to have_content("Name: #{@neil.name}")
@@ -27,6 +27,14 @@ RSpec.describe 'As a user', type: :feature do
         expect(page).to have_content("Age: #{@alex.age}")
         expect(page).to have_content("Job: #{@alex.job}")
       end
+    end
+
+    it 'I see the average age of listed Astronauts' do
+      visit astronauts_path
+
+      expected = (@neil.age + @alex.age + @logan.age) / 3
+
+      expect(page).to have_content("Average Age: #{expected}")
     end
   end
 end
