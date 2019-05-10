@@ -51,19 +51,19 @@ RSpec.describe 'As a user', type: :feature do
       visit astronauts_path
 
       within("#astronaut-#{@neil.id}-missions") do
-        expect(page).to have_content("#{@apollo_13}")
-        expect(page).to have_content("#{@capricorn_4}")
-        expect(page).to have_content("#{@gemini_7}")
+        expect(page).to have_content("#{@apollo_13.title}")
+        expect(page).to have_content("#{@capricorn_4.title}")
+        expect(page).to have_content("#{@gemini_7.title}")
       end
 
       within("#astronaut-#{@logan.id}-missions") do
-        expect(page).to have_content("#{@capricorn_4}")
-        expect(page).to have_content("#{@gemini_7}")
+        expect(page).to have_content("#{@capricorn_4.title}")
+        expect(page).to have_content("#{@gemini_7.title}")
       end
 
       within("#astronaut-#{@alex.id}-missions") do
-        expect(page).to have_content("#{@apollo_13}")
-        expect(page).to have_content("#{@lost}")
+        expect(page).to have_content("#{@apollo_13.title}")
+        expect(page).to have_content("#{@lost.title}")
       end
     end
   end
