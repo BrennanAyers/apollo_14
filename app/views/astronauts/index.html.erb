@@ -1,0 +1,11 @@
+<h2>Astronaut Auditorium</h2>
+
+<section class="astronauts">
+<% @astronauts.each do |astronaut| %>
+  <div class="astronaut" id="astronaut-<%= astronaut.id %>">
+    <p>Name: <%= astronaut.name %></p>
+    <p>Age: <%= astronaut.age %></p>
+    <p>Job: <%= astronaut.job %></p>
+  </div>
+<% end %>
+</section>
